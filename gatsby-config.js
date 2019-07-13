@@ -19,8 +19,8 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Contentful starter',
+    siteUrl: `https://study-gatsby-contentful.suzukalight.com`,
   },
-  siteUrl: `https://study-gatsby-contentful.suzukalight.com`,
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
