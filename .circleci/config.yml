@@ -33,5 +33,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: yarn test
+      # run deploy
+      - run:
+          name: Deploy development branch to gh-pages
+          command: |
+            git config user.email "ci-build@suzukalight.com"
+            git config user.name "ci-build"
+            yarn deploy
