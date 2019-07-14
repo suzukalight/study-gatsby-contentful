@@ -34,9 +34,18 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run deploy
+      - add_ssh_keys:  
+          fingerprints:  
+            - "a4:c1:d0:54:f2:3e:06:23:a3:c5:2a:8d:b6:e1:7b:7f"  
+
+      - run:  
+          name: Start ssh-keyscan  
+          command: |  
+            ssh-keyscan -p ${SSH_PORT} ${HOST_NAME} >> ~/.ssh/known_hosts
+
       - run:
           name: Deploy development branch to gh-pages
           command: |
-            git config user.email "ci-build@suzukalight.com"
-            git config user.name "ci-build"
+            git config user.email "circleci@suzukalight.com"
+            git config user.name "circleci"
             yarn deploy
