@@ -36,7 +36,7 @@ jobs:
       # run deploy
       - add_ssh_keys:  
           fingerprints:  
-            - "a4:c1:d0:54:f2:3e:06:23:a3:c5:2a:8d:b6:e1:7b:7f"  
+            - "c5:2e:f5:8e:38:9d:b8:7d:ec:19:81:4e:0b:6f:a1:4c"  
 
       - run:  
           name: Start ssh-keyscan  
